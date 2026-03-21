@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "nx serve",
+    "build": "nx build",
+    "watch": "nx build --watch --configuration development",
+    "test": "nx test"
   },
   "private": true,
   "packageManager": "pnpm@11.0.0-dev.1005+sha512.91f84a392eea348ea4852a182912d2520273a4336f933b78cc44bc931eb999923c097e9433a9b355adc1f725725ea99082fc9f032a559df832632e764c92c798",
@@ -21,10 +21,16 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/core": "^21.2.3",
+    "@angular-devkit/schematics": "^21.2.3",
     "@angular/build": "^21.2.3",
     "@angular/cli": "^21.2.3",
     "@angular/compiler-cli": "^21.2.0",
+    "@nx/angular": "22.6.1",
+    "@nx/workspace": "22.6.1",
+    "@schematics/angular": "^21.2.3",
     "jsdom": "^28.0.0",
+    "nx": "22.6.1",
     "prettier": "^3.8.1",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
