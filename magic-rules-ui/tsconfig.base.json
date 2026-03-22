@@ -1,0 +1,15 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "navigation": ["libs/shared/ui-navigation/src/index.ts"],
+      "ticketing/Routes": ["apps/ticketing/src/app/remote-entry/entry.routes.ts"]
+    }
+  }
+}
