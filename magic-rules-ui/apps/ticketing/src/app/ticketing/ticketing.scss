@@ -1,0 +1,102 @@
+.ticket-list {
+  padding: 1rem 0;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.btn-create {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  }
+}
+
+.ticket-table {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 140px 140px;
+  padding: 1rem 1.5rem;
+  align-items: center;
+}
+
+.table-head {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.table-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  &.badge-open {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+  }
+
+  &.badge-progress {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+  }
+
+  &.badge-done {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+  }
+
+  &.badge-high {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+  }
+
+  &.badge-medium {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+  }
+
+  &.badge-low {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+  }
+}
