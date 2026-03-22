@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Tenant {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  users     User[]
+  epics     Epic[]
+}
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  auth0Id   String   @unique
+  tenantId  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  createdAt DateTime @default(now())
+}
+model Epic {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  tenantId    String
+  tenant      Tenant   @relation(fields: [tenantId], references: [id])
+  stories     Story[]
+  createdAt   DateTime @default(now())
+}
+model Story {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  epicId      String
+  epic        Epic     @relation(fields: [epicId], references: [id])
+  createdAt   DateTime @default(now())
+}
