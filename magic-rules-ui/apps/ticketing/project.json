@@ -8,7 +8,9 @@
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/ticketing",
         "index": "apps/ticketing/src/index.html",
@@ -21,7 +23,9 @@
             "input": "apps/ticketing/public"
           }
         ],
-        "styles": ["apps/ticketing/src/styles.scss"],
+        "styles": [
+          "apps/ticketing/src/styles.scss"
+        ],
         "customWebpackConfig": {
           "path": "apps/ticketing/webpack.config.ts"
         }
@@ -72,7 +76,9 @@
         }
       },
       "defaultConfiguration": "development",
-      "dependsOn": ["magic-rules-shell:serve"]
+      "dependsOn": [
+        "magic-rules-shell:serve"
+      ]
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -85,7 +91,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/ticketing/jest.config.cts",
         "tsConfig": "apps/ticketing/tsconfig.spec.json"
