@@ -20,29 +20,32 @@ export class Epics {
 
   epicForm = this.fb.group({
     title: ['', Validators.required],
-    description: ['']
+    description: [''],
+    priority: ['MEDIUM']
   });
 
   toggleForm() {
-    this.showForm.update(v => !v);
+    this.showForm.update(() => !this.showForm());
+
     if (!this.showForm()) {
-      this.epicForm.reset();
+      this.epicForm.reset({ priority: 'MEDIUM' });
     }
   }
 
   async createEpic() {
     if (this.epicForm.invalid) return;
-    
-    const { title, description } = this.epicForm.value;
+
+    const { title, description, priority } = this.epicForm.value;
 
     await this.epicsService.create({
       title: title!,
-      description: description!
+      description: description!,
+      priority: priority!
     });
 
     this.epicsResource.reload();
 
-    this.epicForm.reset();
+    this.epicForm.reset({ priority: 'MEDIUM' });
     this.showForm.set(false);
   }
 }

@@ -16,10 +16,11 @@ export class EpicsController {
   }
 
   @Post()
-  create(@Body() body: { title: string; description?: string; tenantId?: string }) {
+  create(@Body() body: { title: string; description?: string; priority?: string; tenantId?: string }) {
     return this.epicsService.create({
       title: body.title,
       description: body.description ?? '',
+      priority: (body.priority as any) ?? 'MEDIUM',
       tenant: { connect: { id: body.tenantId ?? 'default-tenant' } },
     });
   }

@@ -12,6 +12,11 @@
     <textarea formControlName="description" placeholder="Description (optional)"
       class="form-input form-textarea"></textarea>
     <div class="form-row">
+      <select formControlName="priority" class="form-input form-select">
+        <option value="LOW">Low</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="HIGH">High</option>
+      </select>
       <button type="submit" class="btn-submit" [disabled]="epicForm.invalid">Create Epic</button>
     </div>
   </form>
@@ -26,12 +31,28 @@
     <div class="table-head">
       <span class="col-id">ID</span>
       <span class="col-title">Title</span>
+      <span class="col-status">Status</span>
+      <span class="col-priority">Priority</span>
     </div>
 
     @for (epic of epicsResource.value(); track epic.id) {
     <div class="table-row">
       <span class="col-id">{{ epic.id | slice:0:8 }}</span>
       <span class="col-title">{{ epic.title }}</span>
+      <span class="col-status">
+        <span class="badge" [ngClass]="{
+              'badge-open': epic.status === 'OPEN',
+              'badge-progress': epic.status === 'IN_PROGRESS',
+              'badge-done': epic.status === 'DONE'
+            }">{{ epic.status }}</span>
+      </span>
+      <span class="col-priority">
+        <span class="badge" [ngClass]="{
+              'badge-high': epic.priority === 'HIGH',
+              'badge-medium': epic.priority === 'MEDIUM',
+              'badge-low': epic.priority === 'LOW'
+            }">{{ epic.priority }}</span>
+      </span>
     </div>
     }
   </div>

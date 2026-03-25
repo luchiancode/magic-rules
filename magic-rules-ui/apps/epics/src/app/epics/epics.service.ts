@@ -6,6 +6,8 @@ export interface Epic {
   id: string;
   title: string;
   description: string;
+  status: 'OPEN' | 'IN_PROGRESS' | 'DONE';
+  priority: 'LOW' | 'MEDIUM' | 'HIGH';
   createdAt: string;
 }
 
@@ -17,7 +19,7 @@ export class EpicsService {
     return firstValueFrom(this.http.get<Epic[]>(`/api/v1/epics`));
   }
 
-  create(epic: { title: string; description?: string }): Promise<Epic> {
+  create(epic: { title: string; description?: string; priority?: string }): Promise<Epic> {
     return firstValueFrom(this.http.post<Epic>(`/api/v1/epics`, epic));
   }
 }
