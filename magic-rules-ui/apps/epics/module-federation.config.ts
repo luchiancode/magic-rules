@@ -1,9 +1,9 @@
 import { ModuleFederationConfig } from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
-  name: 'ticketing',
+  name: 'epics',
   exposes: {
-    './Routes': 'apps/ticketing/src/app/remote-entry/entry.routes.ts',
+    './Routes': 'apps/epics/src/app/remote-entry/entry.routes.ts',
   },
 };
 

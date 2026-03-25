@@ -1,9 +1,9 @@
 {
-  "name": "ticketing",
+  "name": "epics",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/ticketing/src",
+  "sourceRoot": "apps/epics/src",
   "tags": [],
   "targets": {
     "build": {
@@ -12,22 +12,22 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/ticketing",
-        "index": "apps/ticketing/src/index.html",
-        "main": "apps/ticketing/src/main.ts",
-        "tsConfig": "apps/ticketing/tsconfig.app.json",
+        "outputPath": "dist/epics",
+        "index": "apps/epics/src/index.html",
+        "main": "apps/epics/src/main.ts",
+        "tsConfig": "apps/epics/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/ticketing/public"
+            "input": "apps/epics/public"
           }
         ],
         "styles": [
-          "apps/ticketing/src/styles.scss"
+          "apps/epics/src/styles.scss"
         ],
         "customWebpackConfig": {
-          "path": "apps/ticketing/webpack.config.ts"
+          "path": "apps/epics/webpack.config.ts"
         }
       },
       "configurations": {
@@ -46,7 +46,7 @@
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/ticketing/webpack.prod.config.ts"
+            "path": "apps/epics/webpack.prod.config.ts"
           }
         },
         "development": {
@@ -69,10 +69,10 @@
       },
       "configurations": {
         "production": {
-          "buildTarget": "ticketing:build:production"
+          "buildTarget": "epics:build:production"
         },
         "development": {
-          "buildTarget": "ticketing:build:development"
+          "buildTarget": "epics:build:development"
         }
       },
       "defaultConfiguration": "development",
@@ -83,7 +83,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "ticketing:build"
+        "buildTarget": "epics:build"
       }
     },
     "lint": {
@@ -95,8 +95,8 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "apps/ticketing/jest.config.cts",
-        "tsConfig": "apps/ticketing/tsconfig.spec.json"
+        "jestConfig": "apps/epics/jest.config.cts",
+        "tsConfig": "apps/epics/tsconfig.spec.json"
       }
     },
     "serve-static": {
@@ -104,16 +104,16 @@
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "ticketing:build",
+        "buildTarget": "epics:build",
         "port": 4201,
         "watch": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "ticketing:build:development"
+          "buildTarget": "epics:build:development"
         },
         "production": {
-          "buildTarget": "ticketing:build:production"
+          "buildTarget": "epics:build:production"
         }
       }
     }

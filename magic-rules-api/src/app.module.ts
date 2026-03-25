@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaService } from './prisma.service';
-import { TicketsModule } from './tickets/tickets.module';
+import { EpicsModule } from './epics/epics.module';
 
 @Module({
-  imports: [TicketsModule],
+  imports: [EpicsModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
   exports: [PrismaService],

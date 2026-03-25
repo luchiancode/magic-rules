@@ -24,7 +24,7 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm exec nx run ticketing:serve',
+    command: 'pnpm exec nx run epics:serve',
     url: 'http://localhost:4201',
     reuseExistingServer: true,
     cwd: workspaceRoot,

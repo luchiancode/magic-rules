@@ -1,0 +1,9 @@
+{
+  "name": "epics-e2e",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "epics-e2e/src",
+  "implicitDependencies": ["epics"],
+  "// targets": "to see all targets run: nx show project epics-e2e --web",
+  "targets": {}
+}

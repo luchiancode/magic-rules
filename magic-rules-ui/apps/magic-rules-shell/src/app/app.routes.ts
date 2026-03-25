@@ -2,8 +2,8 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: 'ticketing',
-    loadChildren: () => import('ticketing/Routes').then((m) => m!.remoteRoutes),
+    path: 'epics',
+    loadChildren: () => import('epics/Routes').then((m) => m!.remoteRoutes),
   },
   {
     path: '',

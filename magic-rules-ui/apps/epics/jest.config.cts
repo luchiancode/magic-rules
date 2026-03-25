@@ -1,8 +1,8 @@
 module.exports = {
-  displayName: 'ticketing',
+  displayName: 'epics',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/ticketing',
+  coverageDirectory: '../../coverage/epics',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

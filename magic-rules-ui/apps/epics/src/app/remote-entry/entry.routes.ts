@@ -4,6 +4,6 @@ export const remoteRoutes: Route[] = [
   {
     path: '',
     loadChildren: () =>
-      import('../ticketing/ticketing.module').then((m) => m.TicketingModule),
+      import('../epics/epics.module').then((m) => m.EpicsModule),
   },
 ];

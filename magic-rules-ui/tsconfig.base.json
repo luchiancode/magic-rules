@@ -9,7 +9,7 @@
     "baseUrl": ".",
     "paths": {
       "navigation": ["libs/shared/ui-navigation/src/index.ts"],
-      "ticketing/Routes": ["apps/ticketing/src/app/remote-entry/entry.routes.ts"]
+      "epics/Routes": ["apps/epics/src/app/remote-entry/entry.routes.ts"]
     }
   }
 }

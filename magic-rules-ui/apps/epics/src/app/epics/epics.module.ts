@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { Ticketing } from './ticketing';
+import { Epics } from './epics';
 
-const routes: Routes = [{ path: '', component: Ticketing }];
+const routes: Routes = [{ path: '', component: Epics }];
 
 @NgModule({
-  declarations: [Ticketing],
+  declarations: [Epics],
   imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes)],
 })
-export class TicketingModule { }
+export class EpicsModule { }
